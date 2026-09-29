@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { BusinessInfo, Quote } from './types';
 import { loadBusiness, loadQuotes, saveBusiness, saveQuotes } from './lib/storage';
 import { QuoteList } from './components/QuoteList';
-import { QuoteEditor } from './components/QuoteEditor';
+import QuoteEditor from './components/QuoteEditor';
 import { BusinessSettings } from './components/BusinessSettings';
 
 type View = 'list' | 'edit' | 'settings';
@@ -58,15 +58,15 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <header className="bg-surface border-b border-border rounded-md py-3 shadow-sm">
+        <div className="max-w-5xl mx-auto px-4 flex items-center justify-between">
           <button onClick={() => setView('list')} className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-sm">S</div>
-            <span className="font-semibold text-slate-900">SnapQuote</span>
+            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-white text-sm font-medium">S</div>
+            <span className="text-white font-semibold tracking-tight">SnapQuote</span>
           </button>
           <nav className="flex items-center gap-2">
-            <button onClick={() => setView('settings')} className="text-sm text-slate-600 hover:text-slate-900 px-3 py-2">Settings</button>
-            <button onClick={newQuote} className="text-sm bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium">New Quote</button>
+            <button onClick={() => setView('settings')} className="text-sm text-white px-3 py-2 rounded-md hover:text-white-800">Settings</button>
+            <button onClick={newQuote} className="text-sm bg-accent hover:bg-indigo-700 text-white px-4 py-2 rounded-md font-medium">New Quote</button>
           </nav>
         </div>
       </header>

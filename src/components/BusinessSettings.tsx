@@ -17,7 +17,7 @@ export function BusinessSettings({ business, onChange, onDone }: {
     <div className="max-w-xl">
       <h2 className="text-lg font-semibold text-slate-900 mb-2">Business settings</h2>
       <p className="text-sm text-slate-600 mb-6">These details appear on every quote. Stored only on your device - never uploaded.</p>
-      <div className="bg-white rounded-xl border border-slate-200 p-5 space-y-4">
+      <div className="bg-white rounded-xl border border-slate-800 p-5 space-y-4">
         <div>
           <label className={labelCls}>Business name</label>
           <input className={inputCls} value={b.name} onChange={e => setB({ ...b, name: e.target.value })} placeholder="Acme Plumbing" />
@@ -42,8 +42,8 @@ export function BusinessSettings({ business, onChange, onDone }: {
         </div>
       </div>
       <div className="mt-6 flex gap-3">
-        <button onClick={save} className="bg-primary hover:bg-primary text-white px-5 py-2.5 rounded-lg font-medium">Save</button>
-        <button onClick={onDone} className="px-5 py-2.5 rounded-lg border border-slate-200 hover:bg-slate-50">Cancel</button>
+        <button onClick={save} className="bg-accent text-white rounded-md px-4 py-2.5 font-medium hover:bg-indigo-700">Save</button>
+        <button onClick={onDone} className="rounded-md px-4 py-2.5 border border-slate-200 bg-slate-50 text-sm hover:bg-slate-100">Cancel</button>
       </div>
     </div>
   );
